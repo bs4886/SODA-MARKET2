@@ -24,8 +24,12 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="https://jbit.bufs.ac.kr/~dkim/SODA_image//ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+<!-- 3개폰트-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
 
-	<title>ソーダマーケット</title>
+<title>ソーダマーケット</title>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -33,7 +37,11 @@
 		body {
 			padding-top: 50px;
 			background-color:white;
+     
 		}
+    h2 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+    }
 		/*
     .starter-template {
 			padding: 1px 10%;
@@ -49,6 +57,7 @@
     padding-left:3px;
     padding-right:3px;
     }
+
     	/*
     .star-rating{width:205px;}
     .star-rating,.star-rating span { display: inline-block; heigth:39px; overflow:hidden; background:url(star.png)no-repeat;}
@@ -214,6 +223,8 @@
  <a href="https://jbit.bufs.ac.kr/~dkim/item_info.php?item_no=<?php echo $row['No'];?>&ptn=<?php echo $row['potoname'];?>&type=Blouse"class="text-center">
   <img src="./SODA_item_image/Blouse/<?=$row['potoname']?>" class="img-thumbnail img-fluid"><br><?=$row['name']?><br><center><?=$row['point']?></center>
  </a>
+ <button type="button" class="btn btn-outline-secondary btn"style="margin-top:7px">商品編集</button>                                                                                                     
+ <button type="button" class="btn btn-outline-danger"style="margin-top:7px">販売取り消す</button>  
 </div>
 <?php }  $Blouse_result->free();?>
  
@@ -227,6 +238,8 @@
  <a href="https://jbit.bufs.ac.kr/~dkim/item_info.php?item_no=<?php echo $row['No'];?>&ptn=<?php echo $row['potoname'];?>&type=OPS"class="text-center">
   <img src="./SODA_item_image/OPS/<?=$row['potoname']?>" class="img-thumbnail img-fluid"><br><?=$row['name']?><br><center><?=$row['point']?></center>
  </a>
+ <button type="button" class="btn btn-outline-secondary btn"style="margin-top:7px">商品編集</button>                                                                                                     
+ <button type="button" class="btn btn-outline-danger"style="margin-top:7px">販売取り消す</button>  
 </div>
 <?php }  $OPS_result->free();?>
 
@@ -241,6 +254,8 @@
  <a href="https://jbit.bufs.ac.kr/~dkim/item_info.php?item_no=<?php echo $row['No'];?>&ptn=<?php echo $row['potoname'];?>&type=Outer"class="text-center">
   <img src="./SODA_item_image/Outer/<?=$row['potoname']?>" class="img-thumbnail img-fluid"><br><?=$row['name']?><br><center><?=$row['point']?></center>
  </a>
+ <button type="button" class="btn btn-outline-secondary btn"style="margin-top:7px">商品編集</button>                                                                                                     
+ <button type="button" class="btn btn-outline-danger"style="margin-top:7px">販売取り消す</button>  
 </div>
 <?php }  $Outer_result->free();?>
  
@@ -254,6 +269,8 @@
  <a href="https://jbit.bufs.ac.kr/~dkim/item_info.php?item_no=<?php echo $row['No'];?>&ptn=<?php echo $row['potoname'];?>&type=Top"class="text-center">
   <img src="./SODA_item_image/Top/<?=$row['potoname']?>" class="img-thumbnail img-fluid"><br><?=$row['name']?><br><center><?=$row['point']?></center>
  </a>
+ <button type="button" class="btn btn-outline-secondary btn"style="margin-top:7px">商品編集</button>                                                                                                     
+ <button type="button" class="btn btn-outline-danger"style="margin-top:7px">販売取り消す</button>  
 </div>
 <?php }  $Top_result->free();?>
  <hr style="border:solid 1px  #808080;">
@@ -267,6 +284,8 @@
  <a href="https://jbit.bufs.ac.kr/~dkim/item_info.php?item_no=<?php echo $row['No'];?>&ptn=<?php echo $row['potoname'];?>&type=bags"class="text-center">
   <img src="./SODA_item_image/bags/<?=$row['potoname']?>" class="img-thumbnail img-fluid"><br><?=$row['name']?><br><center><?=$row['point']?></center>
  </a>
+ <button type="button" class="btn btn-outline-secondary btn"style="margin-top:7px">商品編集</button>                                                                                                     
+ <button type="button" class="btn btn-outline-danger"style="margin-top:7px">販売取り消す</button>  
 </div>
 <?php }  $bags_result->free();?>
 
@@ -280,6 +299,9 @@
  <a href="https://jbit.bufs.ac.kr/~dkim/item_info.php?item_no=<?php echo $row['No'];?>&ptn=<?php echo $row['potoname'];?>&type=shoes"class="text-center">
   <img src="./SODA_item_image/shoes/<?=$row['potoname']?>" class="img-thumbnail img-fluid"><br><?=$row['name']?><br><center><?=$row['point']?></center>
  </a>
+ <button type="button" class="btn btn-outline-secondary btn"style="margin-top:7px">商品編集</button>                                                                                                     
+ <button type="button" class="btn btn-outline-danger"style="margin-top:7px">販売取り消す</button>  
+
 </div>
 <?php }  $shoes_result->free();?>
 
@@ -293,6 +315,8 @@
  <a href="https://jbit.bufs.ac.kr/~dkim/item_info.php?item_no=<?php echo $row['No'];?>&ptn=<?php echo $row['potoname'];?>&type=Other"class="text-center">
   <img src="./SODA_item_image/Other/<?=$row['potoname']?>" class="img-thumbnail img-fluid"><br><?=$row['name']?><br><center><?=$row['point']?></center>
  </a>
+ <button type="button" class="btn btn-outline-secondary btn"style="margin-top:7px">商品編集</button>                                                                                                     
+ <button type="button" class="btn btn-outline-danger"style="margin-top:7px">販売取り消す</button>  
 </div>
 <?php }  $Other_result->free();?>
  </div>
@@ -300,7 +324,9 @@
 <br><br><br><br><br>
 
 <hr style="border:solid 3px  #808080;width: 95%;">
-<h2><?= $master_username?>さんの販売確認待ちの商品</h2>
+<center>
+<h2 style=" margin-top:12px"><?= $master_username?>さんの販売確認待ちの商品</h2>
+ </center>
 <div class="row">
  <?php
  while($row = mysqli_fetch_array($Blouse_result2))
@@ -310,6 +336,7 @@
  <a href="https://jbit.bufs.ac.kr/~dkim/item_info.php?item_no=<?php echo $row['No'];?>&ptn=<?php echo $row['potoname'];?>&type=Blouse"class="text-center">
   <img src="./SODA_item_image/Blouse/<?=$row['potoname']?>" class="img-thumbnail img-fluid"><br><?=$row['name']?><br><center><?=$row['point']?></center>
  </a>
+ <button type="button" class="btn btn-outline-success btn"style="margin-top:7px">販売確認</button>                                                                                                     
 </div>
 <?php }  $Blouse_result2->free();?>
  </div>
@@ -323,15 +350,19 @@
  <a href="https://jbit.bufs.ac.kr/~dkim/item_info.php?item_no=<?php echo $row['No'];?>&ptn=<?php echo $row['potoname'];?>&type=Outer"class="text-center">
   <img src="./SODA_item_image/Outer/<?=$row['potoname']?>" class="img-thumbnail img-fluid"><br><?=$row['name']?><br><center><?=$row['point']?></center>
  </a>
- <button type="button" class="btn btn-outline-success btn"style="margin-top:12px">販売確認</button>                                                                                                     
- <button type="button" class="btn btn-outline-danger"style="margin-top:12px">販売取り消す</button>  
+ <button type="button" class="btn btn-outline-success btn"style="margin-top:7px">販売確認</button>                                                                                                     
 </div>
 <?php }  $Outer_result2->free();?>
  </div>
 <br><br><br>
-        <hr style="border:solid 3px  #808080;width: 95%;">
+<hr style="border:solid 3px  #808080;width: 95%;">
 		<div class="container">
-		金 多彬 個人プロジェクト
+		
+    <span>
+    <img src="https://jbit.bufs.ac.kr/~dkim/SODA_image/favicon-96x96.png">© 2021 SodaMarket</img>
+    <h4>金 多彬 Kim Dabin 個人プロジェクト</h4>
+     </span>
+   
 		</div>
  </div>
     </body>

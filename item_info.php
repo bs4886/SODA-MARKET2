@@ -27,9 +27,14 @@
 
 	<title>ソーダマーケット</title>
 	<!-- Bootstrap -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-		<style>
+
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+   	<style>
 		body {
 			padding-top: 50px;
 			background-color:white;
@@ -176,10 +181,10 @@
  ?>
 <div class="container"> 
  <div class="col-xs-4" style="text-align: center;"><br>
-   <img src="./SODA_item_image/<?=$ITEM_TYPE?>/<?=$photo_name?>" style="width:600px; height:600px;" class="img-thumbnail img-fluid" align="left" vspace="10" hspace="10">
+   <img src="./SODA_item_image/<?=$ITEM_TYPE?>/<?=$photo_name?>" style="width:600px; height:600px; " class="img-thumbnail img-fluid" align="left" vspace="10" hspace="10">
  </div>
 
- <div class="col-xs-4" style="text-align: left; ">
+ <div class="col-xs-4" style="text-align: left;margin-top:30px; ">
  <?php	if($_SESSION["id"]==$user_name){ ?>
  <center>
  <button type="button" class="btn btn-secondary btn-lg">商品内容編集</button>
@@ -202,7 +207,7 @@
  <h4>　登録者：　<?= $sql_data['username']?>　<span class="badge badge-info">登録者情報見る</span></h4>
  <br>
 
- <br>
+ <br><br><br>
  <center>
  <button type="button" class="btn btn-outline-warning btn-lg">★気になる</button>
  &nbsp;&nbsp;&nbsp;
@@ -212,16 +217,70 @@
      <span style ="width:50%"></span>
  </span>-->
  </div>
- <br><br><br>
+
+
+ <div style="margin-top:80px; ">
+ <br>
  <hr style="border:solid 1px  #808080;　width: 1000px;">
+<center>
+ <h3>他の商品</h3>
+ </center>
+ </div>
+    <div class="row">
+    <?php
+      $link = mysqli_connect("localhost", "dkim", "rlaekqls1q1q@", "dkim");
+      $sql="select * from item_$ITEM_TYPE where No!=$ITEM_NO and buy=0 limit 4;";
+  	  $result = mysqli_query($link,$sql);
+      //$row=mysqli_fetch_array($rs); 이 줄을 while문 안에 넣어야 행이 끝났을 때 while이 중단됨  
+      while($row = mysqli_fetch_array($result))
+      {
+        if($row['buy']==1){
+          ?><div class="best-item col-xs-6 col-md-3" style="text-align: center; margin-top:12px ">
+          <a href="#"  onclick="return false;" class="d-block">
+           <img style=" opacity: 0.4;"src="./SODA_item_image/<?=$ITEM_TYPE?>/<?=$row['potoname']?>" class="img-thumbnail img-fluid"><br><?=$row['name']?><br><center><?=$row['point']?> soda</center>
+           <div class="best-item-content d-flex flex-column justify-content-end">
+                <h2 class="best-item-title font-weight-bold">品切れ</h2>
+          </div> 
+            </a>
+          </div>
+        <?php  }else{ ?>
+        <div class="col-xs-6 col-md-3" style="text-align: center; margin-top:12px">
+          <a href="https://jbit.bufs.ac.kr/~dkim/item_info.php?item_no=<?php echo $row['No'];?>&ptn=<?php echo $row['potoname'];?>&type=<?=$ITEM_TYPE?>"class="text-center">
+           <img src="./SODA_item_image/<?=$ITEM_TYPE?>/<?=$row['potoname']?>" class="img-thumbnail img-fluid"><br><?=$row['name']?><br><center><?=$row['point']?> soda</center>
+          </a>
+          <?php if ($row['username']=='nao'){ ?>
+           <div class="d-flex justify-content-center small text-warning mb-2">
+            <div class="bi-star-fill"></div>
+            <div class="bi-star-fill"></div>
+            <div class="bi-star-fill"></div>
+            <div class="bi-star-fill"></div>
+            <div class="bi-star-fill"></div>
+          </div>                                  
+          <?php }else if($row['username']=='admin'){  ?>
+          <div class="d-flex justify-content-center small text-warning mb-2">
+              <div class="bi-star-fill"></div>
+              <div class="bi-star-fill"></div>
+              <div class="bi-star-fill"></div>
+          </div>   
+        <?php } ?>
+        </div>
+       <?php } }  $result->free();?>
+      </div>
+
+ 
+
+ </div>
 	
 </div><!--cont-->
 
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        <hr style="border:solid 3px  #808080;width: 95%;">
+<hr style="border:solid 3px  #808080;width: 95%;">
 		<div class="container">
-		金 多彬 個人プロジェクト
+		
+    <span>
+    <img src="https://jbit.bufs.ac.kr/~dkim/SODA_image/favicon-96x96.png">© 2021 SodaMarket</img>
+    <h4>金 多彬 Kim Dabin 個人プロジェクト</h4>
+     </span>
+   
 		</div>
  </div>
     </body>

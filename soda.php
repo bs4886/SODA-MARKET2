@@ -32,6 +32,11 @@
 <link rel="icon" type="image/png" sizes="96x96" href="https://jbit.bufs.ac.kr/~dkim/SODA_image//favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="https://jbit.bufs.ac.kr/~dkim/SODA_image//favicon-16x16.png">
 <link rel="manifest" href="https://jbit.bufs.ac.kr/~dkim/SODA_image//manifest.json">
+<!-- 3개폰트-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="https://jbit.bufs.ac.kr/~dkim/SODA_image//ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
@@ -91,8 +96,10 @@ transition: all 0.2s;
     left : 0;
     right : 0;
     bottom : 0;
-    background-color : rgba(240,242,235,.7);
-}
+    background-color: rgb(255,255,255);
+    background-image : url('https://jbit.bufs.ac.kr/~dkim/SODA_image/ttt.jpeg');
+    background-repeat: no-repeat;
+  }
 .d-block{
     display:block!important
 }
@@ -108,8 +115,9 @@ transition: all 0.2s;
     opacity : 1;
 }
 
-
-
+h2,h4 {
+      font-family: 'M PLUS Rounded 1c', sans-serif;
+    }
 	</style>
   <script>
 $(document).ready(function(){
@@ -148,10 +156,10 @@ $(document).ready(function(){
           $user_point=$row['soda_point'];
           ?>
   <div style="text-align:right;">
-	<span class="badge badge-info" style="font-size: 16px;margin-right:5px;"><?=$_SESSION['id']?> 様、こんにちは！</span>
-	<a href="logout.php" style="font-size: 16px;margin-right:35px;">logout</a>
+	<span class="badge badge-info" style="font-size: 14px;margin-right:5px;"><?=$_SESSION['id']?> 様、こんにちは！</span>
+	<a href="logout.php" style="font-size: 14px;margin-right:35px;">logout</a>
   <br><br>
-  <span class="badge rounded-pill bg-primary text-white" style="font-size: 16px; margin-right:90px;">保有SODA :<?=$user_point?> </span>
+  <span class="badge rounded-pill bg-primary text-white" style="font-size: 14px; margin-right:80px;">保有SODA :<?=$user_point?> </span>
 	<br> 
 </div>
    <?php }?>  			
@@ -285,7 +293,7 @@ $(document).ready(function(){
 
  <center>
 	<h2>Blouse</h2>
-	</center><br><br>
+	</center><br>
           
   <div class="row" id="Blouse_OK">
     <!--
@@ -349,7 +357,7 @@ $(document).ready(function(){
         if($row['buy']==1){
       ?><div class="best-item col-xs-6 col-md-3" style="text-align: center; margin-top:12px ">
       <a href="#"  onclick="return false;" class="d-block">
-       <img style=" opacity: 0.4;"src="./SODA_item_image/Blouse/<?=$row['potoname']?>" class="img-thumbnail img-fluid"><br><?=$row['name']?><br><center><?=$row['point']?> soda</center>
+       <img style=" opacity: 0.6;"src="./SODA_item_image/Blouse/<?=$row['potoname']?>" class="img-thumbnail img-fluid"><br><?=$row['name']?><br><center><?=$row['point']?> soda</center>
        <div class="best-item-content d-flex flex-column justify-content-end">
             <h2 class="best-item-title font-weight-bold">品切れ</h2>
       </div> 
@@ -390,7 +398,7 @@ $(document).ready(function(){
   <hr style="border:solid 1px  #808080;">
 	<center>
 	<h2 id="Top_OK">Top</h2>
-	</center><br><br>
+	</center><br>
           
   <div class="row">
     <?php
@@ -438,7 +446,7 @@ $(document).ready(function(){
   <hr style="border:solid 1px  #808080;">
 	<center>
 	<h2 id="Outer_OK">Outer</h2>
-	</center><br><br>
+	</center><br>
           
   <div class="row">
     <?php
@@ -487,7 +495,7 @@ $(document).ready(function(){
   <hr style="border:solid 1px  #808080;">
 	<center>
 	<h2 id="OPS_OK">OPS/Skirt</h2>
-	</center><br><br>
+	</center><br>
           
   <div class="row">
     <?php
@@ -534,7 +542,7 @@ $(document).ready(function(){
   <hr style="border:solid 1px  #808080;">
 	<center>
 	<h2 id="shoes_OK">シューズ</h2>
-	</center><br><br>
+	</center><br>
           
   <div class="row">
     <?php
@@ -637,11 +645,16 @@ $(document).ready(function(){
   <a href="#end"> <img class=" col-ml-2 img-fluid" src="./SODA_image/down.png"></a>																
 </div>
 	<!--사이드 토글 ! -->	
-	<div class="container">
-		<div class="starter-template">
-		<div id="sidebar">
-  </div>
-  </div>
+  <hr style="border:solid 3px  #808080;width: 95%;">
+		<div class="container">
+		
+    <span>
+    <img src="https://jbit.bufs.ac.kr/~dkim/SODA_image/favicon-96x96.png">© 2021 SodaMarket</img>
+    <h4>金 多彬 Kim Dabin 個人プロジェクト</h4>
+     </span>
+   
+		</div>
+</div>
 </body>
 
 </html>

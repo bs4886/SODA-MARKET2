@@ -209,9 +209,14 @@ function stateHandle() {
    <img src="./SODA_image/in2.png" style=" float: center; width:1000px; height:680px;" class="img-thumbnail img-fluid" vspace="10" hspace="10">
  </div>
 
-        <hr style="border:solid 3px  #808080;width: 95%;">
+ <hr style="border:solid 3px  #808080;width: 95%;">
 		<div class="container">
-		金 多彬 個人プロジェクト
+		
+    <span>
+    <img src="https://jbit.bufs.ac.kr/~dkim/SODA_image/favicon-96x96.png">© 2021 SodaMarket</img>
+    <h4>金 多彬 Kim Dabin 個人プロジェクト</h4>
+     </span>
+   
 		</div>
  </div>
     </body>

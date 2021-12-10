@@ -149,8 +149,14 @@
 
 	<hr style="border:solid 3px  #808080;width: 95%;">
 		<div class="container">
-		金 多彬 個人プロジェクト
+		
+    <span>
+    <img src="https://jbit.bufs.ac.kr/~dkim/SODA_image/favicon-96x96.png">© 2021 SodaMarket</img>
+    <h4>金 多彬 Kim Dabin 個人プロジェクト</h4>
+     </span>
+   
 		</div>
+</div>
 </body>
 
 <script  language="javascript">
